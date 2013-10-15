@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-csp ng-app="jos.core">
+<head>
+    <title>jOS</title>
+    <!-- build:css styles/libs.css -->
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/packaged/css/semantic.css">
+    <!-- endbuild -->
+    <!-- build:css styles/core.css -->
+    <link rel="stylesheet" type="text/css" href="styles/core.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/libs.js -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/core.js -->
+    <script src="scripts/core.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+    <div class="ui menu fixed main inverted" id="menu" ng-controller="menu">
+        <div class="title item drag">
+            <strong>
+                <i class="icon desktop small"></i>
+                jOS
+            </strong>
+        </div>
+        <a class="item">
+            {{a}}
+        </a>
+        <div class="drag blank">
+            &nbsp;
+        </div>
+        <div class="right menu">
+            <a class="item icon" ng-click="fullscreen()">
+                <i class="icon fullscreen small"></i>
+            </a>
+            <a class="item icon" ng-click="quit()">
+                <i class="icon off small"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

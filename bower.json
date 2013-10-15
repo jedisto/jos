@@ -1,0 +1,9 @@
+{
+  "name": "jos",
+  "version": "0.0.1",
+  "dependencies": {
+  	"angular": "1.0.*",
+  	"semantic": "0.5.*"
+  },
+  "devDependencies": {}
+}

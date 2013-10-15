@@ -1,0 +1,25 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+body {
+	padding: 0;
+	margin: 0;
+}
+#menu {
+	display: -webkit-box;
+}
+#menu .drag {
+	-webkit-app-region: drag;
+}
+#menu .blank {
+	-webkit-box-flex: 1;
+}
+@font-face {
+  font-family: 'Basic Icons';
+  src: url(../fonts/basic.icons.eot);
+  src: url(../fonts/basic.icons.eot?#iefix) format('embedded-opentype'), url(../fonts/basic.icons.woff) format('woff'), url(../fonts/basic.icons.ttf) format('truetype'), url(../fonts/basic.icons.svg#basic.icons) format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
