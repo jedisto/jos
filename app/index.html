@@ -3,7 +3,13 @@
 <head>
     <title>jOS</title>
     <!-- build:css styles/libs.css -->
-    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/packaged/css/semantic.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/collections/menu.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/elements/icon.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/elements/button.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/elements/divider.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/elements/label.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/views/item.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/build/uncompressed/views/list.css">
     <!-- endbuild -->
     <!-- build:css styles/core.css -->
     <link rel="stylesheet" type="text/css" href="styles/core.css">
@@ -24,16 +30,16 @@
                 jOS
             </strong>
         </div>
-        <a class="item">
-            {{a}}
-        </a>
         <div class="drag blank">
             &nbsp;
         </div>
         <div class="right menu">
-            <a class="item icon" ng-click="fullscreen()">
-                <i class="icon fullscreen small"></i>
+            <a class="item icon" ng-click="minimize()">
+                <i class="icon minus small"></i>
             </a>
+<!--             <a class="item icon" ng-click="fullscreen()">
+                <i class="icon fullscreen small"></i>
+            </a> -->
             <a class="item icon" ng-click="quit()">
                 <i class="icon off small"></i>
             </a>
