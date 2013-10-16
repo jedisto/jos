@@ -37,9 +37,9 @@ module.exports = function (grunt) {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
             },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server']
+            less: {
+                files: ['<%= yeoman.app %>/styles/*.less'],
+                tasks: ['less']
             }
         },
         connect: {
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.app %>/scripts',
                     src: '{,*/}*.coffee',
-                    dest: '.tmp/scripts',
+                    dest: '<%= yeoman.app %>/.tmp/scripts',
                     ext: '.js'
                 }]
             },
@@ -105,28 +105,15 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'test/spec',
                     src: '{,*/}*.coffee',
-                    dest: '.tmp/spec',
+                    dest: '<%= yeoman.app %>/.tmp/spec',
                     ext: '.js'
                 }]
             }
         },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                relativeAssets: false
-            },
-            dist: {},
-            server: {
-                options: {
-                    debugInfo: true
+        less: {
+            dist: {
+                files: {
+                    '<%= yeoman.app %>/.tmp/styles/core.css': ['<%= yeoman.app %>/styles/*.less']
                 }
             }
         },
@@ -186,7 +173,7 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     '<%= yeoman.dist %>/styles/core.css': [
-                        '.tmp/styles/{,*/}*.css',
+                        '<%= yeoman.app %>/.tmp/styles/{,*/}*.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
                 }
@@ -247,15 +234,15 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'coffee:dist',
-                'compass:server'
+                'less'
             ],
             test: [
                 'coffee',
-                'compass'
+                'less'
             ],
             dist: [
                 'coffee',
-                'compass:dist',
+                'less',
                 'imagemin',
                 'svgmin',
                 'htmlmin'

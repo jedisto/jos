@@ -4,8 +4,8 @@
     "manifest_version": 2,
     "description": "jOS is a platform for web apps.",
     "icons": {
-        "16": "images/icon-16.png",
-        "128": "images/icon-128.png"
+        "16": "images/jos-16.png",
+        "128": "images/jos-128.png"
     },
     "default_locale": "en",
     "app": {
